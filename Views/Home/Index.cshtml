@@ -1,0 +1,23 @@
+﻿@model CategoryTaskVM
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="accordion" id="accordionExample"> 
+    @foreach (var item in Model.CategoryLists) 
+    {
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@Html.Raw("collapse"+item.CategoryListId)" aria-expanded="false" aria-controls="collapseOne">
+                    @item.CategoryName
+                </button>
+            </h2>
+            <div id="@Html.Raw("collapse"+item.CategoryListId)" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <vc:task-lists category-list-id="@item.CategoryListId"></vc:task-lists>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,59 @@
+﻿@model TaskListVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Task Lists</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskList.RegisterDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskList.CategoryListId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskList.TaskName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskList.TaskDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskList.TaskStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model?.TaskLists) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegisterDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryList.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskStatus)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TaskListId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TaskListId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TaskListId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
