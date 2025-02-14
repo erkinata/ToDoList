@@ -15,7 +15,7 @@ namespace ToDoList.Models
 
 
 
-        public ICollection<TaskList> TaskList { get; set; }=new List<TaskList>();       //tablo birleştirme
+        public ICollection<TaskList> TaskList { get; set; }=new List<TaskList>();      
 
 
 

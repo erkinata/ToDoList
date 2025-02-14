@@ -7,8 +7,8 @@ namespace ToDoList.Models
     {
         public TaskList? TaskList { get; set; }
 
-        public List<SelectListItem>? CategoryListItems { get; set; }     //select kutucuğundaki category nesneleri
+        public List<SelectListItem>? CategoryListItems { get; set; }     
        
-        public ICollection<TaskList>? TaskLists {get; set; }                //tablo birleştirmek için ekledik
+        public ICollection<TaskList>? TaskLists {get; set; }               
     }
 }

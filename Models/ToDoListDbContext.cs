@@ -5,14 +5,14 @@ namespace ToDoList.Models
 {
     public class ToDoListDbContext: IdentityDbContext
     {
-        public ToDoListDbContext(DbContextOptions<ToDoListDbContext> options) : base(options) { }
+        public ToDoListDbContext(DbContextOptions<ToDoListDbContext> options) : base(options) { } //TEST
         public DbSet<TaskList> TaskList { get; set; }
 
         public DbSet<CategoryList> CategoryList { get; set; }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
        
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)           //sonradan ekledik-tabloları birleştirmek için
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)           //tabloları birleştirmek için
         //{
         //    modelBuilder.Entity<CategoryList>()
         //        .HasMany(c => c.TaskList)
